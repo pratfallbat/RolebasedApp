@@ -12,6 +12,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { UnauthorizedComponent } from './services/unauthorized/unauthorized.component';
 import { NotfoundComponent } from './services/notfound/notfound.component';
 import { DetailComponent } from './pages/detail/detail.component';
+import { DashBoardComponent } from './pages/dash-board/dash-board.component';
+import { OrderStatsComponent } from './pages/order-stats/order-stats.component';
+import { ProductStatsComponent } from './pages/product-stats/product-stats.component';
+import { OrdersComponent } from './pages/orders/orders.component';
+import { ProductsComponent } from './pages/products/products.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +28,11 @@ import { DetailComponent } from './pages/detail/detail.component';
     UnauthorizedComponent,
     NotfoundComponent,
     DetailComponent,
+    DashBoardComponent,
+    OrderStatsComponent,
+    ProductStatsComponent,
+    OrdersComponent,
+    ProductsComponent,
   ],
   imports: [
     BrowserModule,
