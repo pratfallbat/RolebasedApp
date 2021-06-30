@@ -33,6 +33,7 @@ export class HomeComponent implements OnInit {
   constructor(private userService: UserServiceService, private router: Router) {
     this.userService.currentUser.subscribe((data) => {
       this.currentUser = data;
+      console.log(this.currentUser);
     });
 
     router.events
@@ -57,7 +58,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {}
 
   title = 'RolebasedApp';
-  currentUser: User;
+  currentUser: any;
 
   logOut() {
     debugger;

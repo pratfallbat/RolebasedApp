@@ -22,13 +22,13 @@ export class AuthGuard implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     debugger;
     if (this.currentUser) {
-      if (
-        route.data.roles &&
-        route.data.roles.indexOf(this.currentUser.role) === -1
-      ) {
-        this.router.navigate(['/401']);
-        return false;
-      }
+      // if (
+      //   route.data.roles &&
+      //   route.data.roles.indexOf(this.currentUser.role) === -1
+      // ) {
+      //   this.router.navigate(['/401']);
+      //   return false;
+      // }
       return true;
     }
     this.router.navigate(['/login']);
