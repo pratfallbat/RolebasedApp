@@ -15,10 +15,14 @@ import { DetailComponent } from './pages/detail/detail.component';
 import { DashBoardComponent } from './pages/dash-board/dash-board.component';
 import { OrderStatsComponent } from './pages/order-stats/order-stats.component';
 import { ProductStatsComponent } from './pages/product-stats/product-stats.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OrdersComponent } from './pages/orders/orders.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { EmployeesComponent } from './pages/employees/employees.component';
 import { CustomerComponent } from './pages/customer/customer.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { ClarityModule } from '@clr/angular';
 
 @NgModule({
   declarations: [
@@ -40,10 +44,15 @@ import { CustomerComponent } from './pages/customer/customer.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    NgxChartsModule,
     AppRoutingModule,
     FormsModule,
-    // ReactiveFormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
+    // NgxDatatableModule,
+    NgxChartsModule,
+    ClarityModule.forChild(),
   ],
   providers: [],
   bootstrap: [AppComponent],

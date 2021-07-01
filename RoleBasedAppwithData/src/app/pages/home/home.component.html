@@ -67,38 +67,28 @@
   </div>
 </nav>
 
-<nav
-  class="navbar navbar-expand bg-light"
+<ul
+  class="nav nav-pills mb-3"
   *ngIf="
     appHeaderItems[selectedHeaderItemIndex].subNav &&
     appHeaderItems[selectedHeaderItemIndex].subNav.length > 0
   "
 >
-  <div class="navbar-nav mr-auto" *ngIf="currentUser">
-    <!-- <div class="navbar-nav ml-auto"> -->
-    <li
-      *ngFor="
-        let subNavItem of appHeaderItems[selectedHeaderItemIndex].subNav;
-        let idx = index
-      "
-      class="nav-item"
+  <li
+    *ngFor="
+      let subNavItem of appHeaderItems[selectedHeaderItemIndex].subNav;
+      let idx = index
+    "
+    class="nav-item"
+  >
+    <a
+      class="nav-link"
+      [routerLink]="subNavItem.href"
+      routerLinkActive="active"
     >
-      <a
-        class="nav-link"
-        [routerLink]="subNavItem.href"
-        routerLinkActive="active"
-      >
-        <span class="glyphicon glyphicon-log-in"></span> {{ subNavItem.label }}
-      </a>
-    </li>
-
-    <!-- <li class="nav-item">
-      <a href="/home/dashboard/product" class="nav-link">
-        <span class="glyphicon glyphicon-log-in"></span>
-        Product State
-      </a>
-    </li> -->
-  </div>
-</nav>
+      <span class="glyphicon glyphicon-log-in"></span> {{ subNavItem.label }}
+    </a>
+  </li>
+</ul>
 
 <router-outlet></router-outlet>

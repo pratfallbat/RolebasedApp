@@ -25,38 +25,18 @@ export class UserServiceService {
   public get currentUserValue(): User {
     return this.currentUserSubject.value;
   }
-  // login(user: User): Observable<any> {
-  //   debugger;
-  //   const headers = new HttpHeaders(
-  //     user
-  //       ? {
-  //           authorization: 'Basic ' + btoa(user.username + ':' + user.password),
-  //         }
-  //       : {}
-  //   );
-  //   return this.http
-  //     .get<any>('http://localhost:8080/api/user/' + 'login', {
-  //       headers: headers,
-  //     })
-  //     .pipe(
-  //       map((response) => {
-  //         if (response) {
-  //           debugger;
-  //           localStorage.setItem('currentUser', JSON.stringify(response));
-  //           this.currentUserSubject.next(response);
-  //           console.log(this.currentUserSubject);
-  //           console.log('---------------');
 
-  //           console.log(this.currentUser);
-  //         }
-  //         return response;
-  //       })
-  //     );
-  // }
+  getTokenStored() {
+    let responseData: any = localStorage.getItem('currentUser');
+    if (responseData != null) {
+      return responseData.token;
+    }
+    return null;
+  }
   getHeaders(): HttpHeaders {
     let headers = new HttpHeaders();
-    let token = null;
-    // this.userInfoService.getStoredToken();
+    let token = this.getTokenStored();
+
     headers = headers.append('Content-Type', 'application/json');
     if (token !== null) {
       headers = headers.append('Authorization', token);
@@ -65,7 +45,6 @@ export class UserServiceService {
   }
   login(user: UserModelforLogin): Observable<any> {
     debugger;
-
     return this.http
       .post('http://localhost:9119/session', user, { headers: null })
       .pipe(
@@ -89,16 +68,6 @@ export class UserServiceService {
             this.currentUserSubject.next(uone);
             return uone;
           }
-
-          // if (response) {
-          //   debugger;
-          //   localStorage.setItem('currentUser', JSON.stringify(response));
-          //   this.currentUserSubject.next(response);
-          //   console.log(this.currentUserSubject);
-          //   console.log('---------------');
-          //   console.log(this.currentUser);
-          // }
-          // return response;
         })
       );
   }
