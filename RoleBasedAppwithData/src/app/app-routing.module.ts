@@ -18,17 +18,7 @@ import { NotfoundComponent } from './services/notfound/notfound.component';
 import { UnauthorizedComponent } from './services/unauthorized/unauthorized.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  {
-    path: 'login',
-    component: LoginComponent,
-    data: { selectedHeaderItemIndex: -1, selectedSubNavItemIndex: -1 },
-  },
-  {
-    path: 'signup',
-    component: SignupComponent,
-    data: { selectedHeaderItemIndex: -1, selectedSubNavItemIndex: -1 },
-  },
+  { path: '', redirectTo: 'home/dashboard/order', pathMatch: 'full' },
 
   {
     path: 'home',
@@ -85,6 +75,16 @@ const routes: Routes = [
         data: { selectedHeaderItemIndex: 1, selectedSubNavItemIndex: -1 },
       },
     ],
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    data: { selectedHeaderItemIndex: -1, selectedSubNavItemIndex: -1 },
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
+    data: { selectedHeaderItemIndex: -1, selectedSubNavItemIndex: -1 },
   },
 
   {

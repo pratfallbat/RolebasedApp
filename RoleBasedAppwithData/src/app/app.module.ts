@@ -23,6 +23,10 @@ import { CustomerComponent } from './pages/customer/customer.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { ClarityModule } from '@clr/angular';
+import { ApirequestService } from './services/apirequest.service';
+import { AppConfig } from './services/app-config';
+import { OrderService } from './services/order.service';
+import { TranslateService } from './services/translate/translate.service';
 
 @NgModule({
   declarations: [
@@ -54,7 +58,7 @@ import { ClarityModule } from '@clr/angular';
     NgxChartsModule,
     ClarityModule.forChild(),
   ],
-  providers: [],
+  providers: [AppConfig, ApirequestService, OrderService, TranslateService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

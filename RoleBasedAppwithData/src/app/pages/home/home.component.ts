@@ -61,13 +61,11 @@ export class HomeComponent implements OnInit {
   currentUser: any;
 
   logOut() {
-    debugger;
     this.userService.logOut().subscribe((data) => {
       this.router.navigate(['/login']);
     });
   }
   get isAdmin() {
-    debugger;
     return this.currentUser && this.currentUser.role === Role.ADMIN;
   }
 }
