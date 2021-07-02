@@ -60,12 +60,13 @@ import { LegendComponent } from './components/legend/legend.component';
     FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
+    NgxDatatableModule,
     NgxChartsModule,
     AppRoutingModule,
 
     ReactiveFormsModule,
     HttpClientModule,
-    NgxDatatableModule,
+
     ClarityModule.forChild(),
   ],
   providers: [AppConfig],
