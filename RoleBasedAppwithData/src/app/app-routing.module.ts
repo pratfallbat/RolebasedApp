@@ -9,6 +9,7 @@ import { DetailComponent } from './pages/detail/detail.component';
 import { EmployeesComponent } from './pages/employees/employees.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { OrderDetailComponent } from './pages/order-detail/order-detail.component';
 import { OrderStatsComponent } from './pages/order-stats/order-stats.component';
 import { OrdersComponent } from './pages/orders/orders.component';
 import { ProductStatsComponent } from './pages/product-stats/product-stats.component';
@@ -60,6 +61,11 @@ const routes: Routes = [
         data: { selectedHeaderItemIndex: 1, selectedSubNavItemIndex: -1 },
       },
       {
+        path: 'orders/:id',
+        component: OrderDetailComponent,
+        data: [{ selectedHeaderItemIndex: 1, selectedSubNavItemIndex: -1 }],
+      },
+      {
         path: 'products',
         component: ProductsComponent,
         data: { selectedHeaderItemIndex: 1, selectedSubNavItemIndex: -1 },
@@ -86,13 +92,23 @@ const routes: Routes = [
     component: SignupComponent,
     data: { selectedHeaderItemIndex: -1, selectedSubNavItemIndex: -1 },
   },
+  {
+    path: 'order-detail',
+    component: AdminhomeComponent,
+    canActivate: [AuthGuard],
+    data: {
+      roles: [Role.ADMIN],
+      selectedHeaderItemIndex: -1,
+      selectedSubNavItemIndex: -1,
+    },
+  },
 
   {
     path: 'admin',
     component: AdminhomeComponent,
     canActivate: [AuthGuard],
     data: {
-      roles: [Role.ADMIN],
+      // roles: [Role.ADMIN],
       selectedHeaderItemIndex: -1,
       selectedSubNavItemIndex: -1,
     },
@@ -102,21 +118,26 @@ const routes: Routes = [
     component: DetailComponent,
     canActivate: [AuthGuard],
     data: {
-      roles: [Role.ADMIN],
+      // roles: [Role.ADMIN],
       selectedHeaderItemIndex: -1,
       selectedSubNavItemIndex: -1,
     },
   },
   {
-    path: '404',
+    path: '**',
     component: NotfoundComponent,
-    data: { selectedHeaderItemIndex: -1, selectedSubNavItemIndex: -1 },
+    data: [{ selectedHeaderItemIndex: -1, selectedSubNavItemIndex: -1 }],
   },
-  {
-    path: '401',
-    component: UnauthorizedComponent,
-    data: { selectedHeaderItemIndex: -1, selectedSubNavItemIndex: -1 },
-  },
+  // {
+  //   path: '404',
+  //   component: NotfoundComponent,
+  //   data: { selectedHeaderItemIndex: -1, selectedSubNavItemIndex: -1 },
+  // },
+  // {
+  //   path: '401',
+  //   component: UnauthorizedComponent,
+  //   data: { selectedHeaderItemIndex: -1, selectedSubNavItemIndex: -1 },
+  // },
 ];
 
 @NgModule({
@@ -126,6 +147,7 @@ const routes: Routes = [
 export class AppRoutingModule {
   constructor(private router: Router) {
     this.router.errorHandler = (error: any) => {
+      console.log(error);
       this.router.navigate(['/404']);
     };
   }

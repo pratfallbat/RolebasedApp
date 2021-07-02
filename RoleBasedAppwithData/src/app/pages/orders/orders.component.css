@@ -1,0 +1,9 @@
+.s-info-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.s-info-bar button {
+  outline: none;
+}

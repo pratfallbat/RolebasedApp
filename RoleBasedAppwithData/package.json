@@ -23,7 +23,7 @@
     "@clr/icons": "^0.11.2-patch",
     "@clr/ui": "^0.11.2-patch",
     "@swimlane/ngx-charts": "^13.0.4",
-    "@swimlane/ngx-datatable": "^11.3.2",
+    "@swimlane/ngx-datatable": "^19.0.0",
     "@types/d3-shape": "^3.0.0",
     "@webcomponents/custom-elements": "^1.0.8",
     "bootstrap": "^4.3.1",

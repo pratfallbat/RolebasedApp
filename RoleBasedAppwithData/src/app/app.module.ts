@@ -27,9 +27,18 @@ import { ApirequestService } from './services/apirequest.service';
 import { AppConfig } from './services/app-config';
 import { OrderService } from './services/order.service';
 import { TranslateService } from './services/translate/translate.service';
+import { OrderDetailComponent } from './pages/order-detail/order-detail.component';
+import { RouterModule } from '@angular/router';
+import { LogoComponent } from './components/logo/logo.component';
+import { BadgeComponent } from './components/badge/badge.component';
+import { LegendComponent } from './components/legend/legend.component';
 
 @NgModule({
   declarations: [
+    BadgeComponent,
+    LegendComponent,
+    LogoComponent,
+
     AppComponent,
     LoginComponent,
     SignupComponent,
@@ -45,20 +54,21 @@ import { TranslateService } from './services/translate/translate.service';
     ProductsComponent,
     EmployeesComponent,
     CustomerComponent,
+    OrderDetailComponent,
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     NgxChartsModule,
     AppRoutingModule,
-    FormsModule,
+
     ReactiveFormsModule,
     HttpClientModule,
-    // NgxDatatableModule,
-    NgxChartsModule,
+    NgxDatatableModule,
     ClarityModule.forChild(),
   ],
-  providers: [AppConfig, ApirequestService, OrderService, TranslateService],
+  providers: [AppConfig],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

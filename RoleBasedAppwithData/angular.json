@@ -33,7 +33,7 @@
               "src/assets/fonts/glyphicons/glyphicons.css",
               "node_modules/@clr/icons/clr-icons.min.css",
               "node_modules/@clr/ui/clr-ui.min.css",
-              "node_modules/@swimlane/ngx-datatable/release/assets/icons.css"
+              "node_modules/@swimlane/ngx-datatable/assets/icons.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
