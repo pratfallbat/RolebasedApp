@@ -57,10 +57,11 @@ import { LegendComponent } from './components/legend/legend.component';
     OrderDetailComponent,
   ],
   imports: [
-    FormsModule,
+    NgxDatatableModule,
+
     BrowserModule,
     BrowserAnimationsModule,
-    NgxDatatableModule,
+    FormsModule,
     NgxChartsModule,
     AppRoutingModule,
 

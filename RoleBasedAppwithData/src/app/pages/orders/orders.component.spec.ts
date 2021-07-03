@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 import { OrdersComponent } from './orders.component';
 
@@ -8,9 +9,9 @@ describe('OrdersComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OrdersComponent ]
-    })
-    .compileComponents();
+      declarations: [OrdersComponent],
+      imports: [NgxDatatableModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {

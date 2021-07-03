@@ -11,12 +11,12 @@
     [rows]="rows"
     [columns]="columns"
     [headerHeight]="45"
+    [footerHeight]="45"
     [rowHeight]="'auto'"
     [columnMode]="'standard'"
     [scrollbarV]="false"
-    [scrollbarH]="true"
     trackScroll
-    (bottom)="onScroll()"
+    (dblclick)="onScroll()"
   >
   </ngx-datatable>
 

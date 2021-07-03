@@ -11,7 +11,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~12.0.5",
-    "@angular/cdk": "^8.2.3",
+    "@angular/cdk": "^12.0.5",
     "@angular/common": "~12.0.5",
     "@angular/compiler": "~12.0.5",
     "@angular/core": "~12.0.5",
@@ -23,7 +23,7 @@
     "@clr/icons": "^0.11.2-patch",
     "@clr/ui": "^0.11.2-patch",
     "@swimlane/ngx-charts": "^13.0.4",
-    "@swimlane/ngx-datatable": "^19.0.0",
+    "@swimlane/ngx-datatable": "^17.1.0",
     "@types/d3-shape": "^3.0.0",
     "@webcomponents/custom-elements": "^1.0.8",
     "bootstrap": "^4.3.1",
